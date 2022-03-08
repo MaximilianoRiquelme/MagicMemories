@@ -1,9 +1,9 @@
 # MagicMemories
 
 Se trata de una app que va a tener las siguientes integraciones:
-• Camara
-• Geolocalización
-• Data Storage
+- Camara
+- Geolocalización
+- Data Storage
 
 Basicamente es una aplicación con la que podremos tomar fotos y visualizarlas como en la aplicacion nativa de fotos y tambien tendran guardada la localización de donde fueron tomadas para tambien mostrar en el mapa un pin con cada foto
 
@@ -19,7 +19,7 @@ Pantalla Principal: (Contenido)
 - Boton para ir a la "Galeria"
 - Cualquier otro aditamento que se les ocurra (editado)
 
-Galeria:
+Galeria: 
 Esta sera una vista de pestañas que va a contener las otras 3 pantallas restantes (Memories, Albums y Mapa)
 debera contener las 3 pestañas una para cada pantalla y cada item de pestaña debe tener su titulo y algun icono que uds crean que le iria bien
 
