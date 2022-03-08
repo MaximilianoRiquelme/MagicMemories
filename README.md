@@ -22,13 +22,16 @@ Pantalla Principal: (Contenido)
 Galeria:
 Esta sera una vista de pestañas que va a contener las otras 3 pantallas restantes (Memories, Albums y Mapa)
 debera contener las 3 pestañas una para cada pantalla y cada item de pestaña debe tener su titulo y algun icono que uds crean que le iria bien
-    Memories: (Contenido)
-    - Una vista de cuadricula con todas las fotos ordenadas por fecha es decir la mas reciente hasta abajo
-    - Un boton en la parte superior derecha dentro de la barra de navegacion para editar (seleccionar y poder eliminar o agregar a un album)
-    Al seleccionar alguna de las fotos te tiene que mandar a una vista de detalle donde se muestre la foto que seleccionaste en grande a toda la pantalla y tambien desde ahi poder eliminarla y/o agregar a un album (editado)
-    Mapa: (Contenido)
-    - Vista en pantalla completa de el mapa con la localizacion actual del device marcada
-    - Por cada foto que se tenga en la "galeria" hay que poner un pin en el mapa que corresponda con las coordenadas donde se tomo la foto
-    Albums: (Contenido)
-    - Una vista de lista con todos los albums que se tengan creados
-    - Boton en la esquina superior derecha dentro de la barra de navegacion para editar que permita eliminar un album al seleccionarlo, cuando se seleccione un album para eliminar se debera preguntar si tambien se quieren eliminar las fotos que contiene el album o solo el album
+
+Memories: (Contenido)
+- Una vista de cuadricula con todas las fotos ordenadas por fecha es decir la mas reciente hasta abajo
+- Un boton en la parte superior derecha dentro de la barra de navegacion para editar (seleccionar y poder eliminar o agregar a un album)
+Al seleccionar alguna de las fotos te tiene que mandar a una vista de detalle donde se muestre la foto que seleccionaste en grande a toda la pantalla y tambien desde ahi poder eliminarla y/o agregar a un album (editado)
+
+Mapa: (Contenido)
+- Vista en pantalla completa de el mapa con la localizacion actual del device marcada
+- Por cada foto que se tenga en la "galeria" hay que poner un pin en el mapa que corresponda con las coordenadas donde se tomo la foto
+
+Albums: (Contenido)
+- Una vista de lista con todos los albums que se tengan creados
+- Boton en la esquina superior derecha dentro de la barra de navegacion para editar que permita eliminar un album al seleccionarlo, cuando se seleccione un album para eliminar se debera preguntar si tambien se quieren eliminar las fotos que contiene el album o solo el album
