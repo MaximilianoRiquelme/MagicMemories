@@ -29,7 +29,7 @@ class CoreDataClient
         }
     }
     
-    func fetchPhoto() -> [Photo] {
+    func fetchPhotos() -> [Photo] {
         var fetchResult = [Photo]()
         
         //NSFetchRequest is a generic class. It is a description of search criteria used to retrieve data from a presistent store.

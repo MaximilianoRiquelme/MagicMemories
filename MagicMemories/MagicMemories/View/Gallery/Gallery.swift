@@ -13,7 +13,10 @@ class Gallery: UITabBarController {
         super.viewDidLoad()
         title = "Gallery"
         // Do any additional setup after loading the view.
-        let tabs = [Memories(), Map(), Albums()]
+        let tabs = [Memories(cellSize: self.view.frame.width/2),
+                    Map(),
+                    Albums()]
+        
         self.setViewControllers(tabs, animated: true)
         
         self.tabBar.unselectedItemTintColor = .white

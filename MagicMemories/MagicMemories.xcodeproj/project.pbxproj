@@ -31,6 +31,10 @@
 		E2A1BAF727DA45730021124C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A1BAF627DA45730021124C /* Main.storyboard */; };
 		E2A1BAFA27DA51090021124C /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A1BAF827DA51090021124C /* Gallery.swift */; };
 		E2A1BAFB27DA51090021124C /* Gallery.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A1BAF927DA51090021124C /* Gallery.xib */; };
+		E2A7E8F127E241FA00499395 /* MemoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7E8EF27E241FA00499395 /* MemoriesCell.swift */; };
+		E2A7E8F227E241FA00499395 /* MemoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2A7E8F027E241FA00499395 /* MemoriesCell.xib */; };
+		E2D43D1227E3D6690071A04D /* PhotoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D43D1027E3D6690071A04D /* PhotoDetail.swift */; };
+		E2D43D1327E3D6690071A04D /* PhotoDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D43D1127E3D6690071A04D /* PhotoDetail.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,10 @@
 		E2A1BAF627DA45730021124C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E2A1BAF827DA51090021124C /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		E2A1BAF927DA51090021124C /* Gallery.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Gallery.xib; sourceTree = "<group>"; };
+		E2A7E8EF27E241FA00499395 /* MemoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesCell.swift; sourceTree = "<group>"; };
+		E2A7E8F027E241FA00499395 /* MemoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoriesCell.xib; sourceTree = "<group>"; };
+		E2D43D1027E3D6690071A04D /* PhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetail.swift; sourceTree = "<group>"; };
+		E2D43D1127E3D6690071A04D /* PhotoDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDetail.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +167,7 @@
 		E26C020D27E11A120064D6AA /* Memories */ = {
 			isa = PBXGroup;
 			children = (
+				E2A7E8EE27E2411700499395 /* Cell */,
 				E26C020927E11A080064D6AA /* Memories.swift */,
 				E26C020A27E11A080064D6AA /* Memories.xib */,
 			);
@@ -212,6 +221,7 @@
 		E2A1BAFC27DA61880021124C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E2D43D0F27E3D5FE0071A04D /* PhotoDetail */,
 				E26C021327E11B8D0064D6AA /* Albums */,
 				E26C020E27E11B620064D6AA /* Map */,
 				E26C020D27E11A120064D6AA /* Memories */,
@@ -226,6 +236,24 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E2A7E8EE27E2411700499395 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E2A7E8EF27E241FA00499395 /* MemoriesCell.swift */,
+				E2A7E8F027E241FA00499395 /* MemoriesCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E2D43D0F27E3D5FE0071A04D /* PhotoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E2D43D1027E3D6690071A04D /* PhotoDetail.swift */,
+				E2D43D1127E3D6690071A04D /* PhotoDetail.xib */,
+			);
+			path = PhotoDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,10 +363,12 @@
 				E2A1BAFB27DA51090021124C /* Gallery.xib in Resources */,
 				E2A1BAEF27DA42AF0021124C /* Camera.xib in Resources */,
 				E26C020C27E11A080064D6AA /* Memories.xib in Resources */,
+				E2D43D1327E3D6690071A04D /* PhotoDetail.xib in Resources */,
 				E21D17D927D7E5E800769F1D /* LaunchScreen.storyboard in Resources */,
 				E21D17D627D7E5E800769F1D /* Assets.xcassets in Resources */,
 				E26C021227E11B7A0064D6AA /* Map.xib in Resources */,
 				E2A1BAF727DA45730021124C /* Main.storyboard in Resources */,
+				E2A7E8F227E241FA00499395 /* MemoriesCell.xib in Resources */,
 				E26C021727E11BDC0064D6AA /* Albums.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,7 +399,9 @@
 				E2A1BAEC27DA42AF0021124C /* Camera.swift in Sources */,
 				E26C020B27E11A080064D6AA /* Memories.swift in Sources */,
 				E26C021127E11B7A0064D6AA /* Map.swift in Sources */,
+				E2D43D1227E3D6690071A04D /* PhotoDetail.swift in Sources */,
 				E297FC7327DFCCC900DD1B13 /* CoreDataClient.swift in Sources */,
+				E2A7E8F127E241FA00499395 /* MemoriesCell.swift in Sources */,
 				E2A1BAFA27DA51090021124C /* Gallery.swift in Sources */,
 				E21D17D427D7E5E700769F1D /* MagicMemories.xcdatamodeld in Sources */,
 				E26C021627E11BDC0064D6AA /* Albums.swift in Sources */,

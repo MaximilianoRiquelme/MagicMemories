@@ -37,7 +37,7 @@ class Camera: UIViewController
         
         if let navController = self.navigationController
         {
-            navController.modalPresentationStyle = .automatic
+            navController.modalPresentationStyle = .fullScreen
             navController.pushViewController(gallery, animated: true)
         }
     }

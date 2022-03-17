@@ -7,12 +7,18 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
-class Memories: UICollectionViewController {
+class Memories: UICollectionViewController
+{
+    private let cellIdentifier: String = "MemoriesCell"
+    var fetchedPhotos: [Photo]?
     
-    init() {
-        super.init(nibName: "Memories", bundle: nil)
+    init(cellSize: CGFloat) {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: cellSize-4, height: cellSize-4)
+        layout.minimumLineSpacing = 9
+        layout.minimumInteritemSpacing = 1
+        super.init(collectionViewLayout: layout)
         self.title = "Memories"
     }
     
@@ -22,77 +28,58 @@ class Memories: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .cyan
+        self.collectionView.backgroundColor = .secondarySystemBackground
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        let nib = UINib(nibName: cellIdentifier, bundle: nil)
+        self.collectionView!.register(nib, forCellWithReuseIdentifier: cellIdentifier)
+        
         // Do any additional setup after loading the view.
+        fetchedPhotos = CoreDataClient.shareInstance.fetchPhotos()
+        self.collectionView.reloadData()
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     // MARK: UICollectionViewDataSource
-
+    */
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return fetchedPhotos?.count ?? .zero
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? MemoriesCell
+        else {
+            return MemoriesCell()
+        }
     
         // Configure the cell
+        cell.restoreCell()
+        
+        cell.updateCell(photo: (fetchedPhotos?[indexPath.item])!)
     
         return cell
     }
-
+    
+    /*
     // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
     */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photoDetail = PhotoDetail(photo: (fetchedPhotos?[indexPath.item])!)
+        
+        if let navController = self.navigationController
+        {
+            navController.modalPresentationStyle = .fullScreen
+            navController.pushViewController(photoDetail, animated: true)
+        }
     }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-    
 }
