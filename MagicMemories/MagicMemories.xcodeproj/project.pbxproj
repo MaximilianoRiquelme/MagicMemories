@@ -133,7 +133,6 @@
 		E21D17C827D7E5E600769F1D /* MagicMemories */ = {
 			isa = PBXGroup;
 			children = (
-				E2A1BAFD27DA61950021124C /* Model */,
 				E297FC7127DFCC8700DD1B13 /* Controller */,
 				E2A1BAFC27DA61880021124C /* View */,
 				E21D17D227D7E5E700769F1D /* MagicMemories.xcdatamodeld */,
@@ -229,13 +228,6 @@
 				E2A1BAE927DA3F9F0021124C /* Gallery */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		E2A1BAFD27DA61950021124C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		E2A7E8EE27E2411700499395 /* Cell */ = {

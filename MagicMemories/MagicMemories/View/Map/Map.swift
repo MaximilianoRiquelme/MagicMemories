@@ -9,9 +9,12 @@ import UIKit
 
 class Map: UIViewController {
     
+    var tabImage: UIImage = .strokedCheckmark
+    
     init() {
         super.init(nibName: "Map", bundle: nil)
         self.title = "Map"
+        tabBarItem.image = UIImage(systemName: "map.circle")
     }
     
     required init?(coder: NSCoder) {
@@ -20,7 +23,7 @@ class Map: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .green
+        self.view.backgroundColor = .secondarySystemBackground
         // Do any additional setup after loading the view.
     }
 

@@ -11,6 +11,7 @@ class PhotoDetail: UIViewController
 {
     var photo: Photo?
     @IBOutlet var photoImage: UIImageView!
+    @IBOutlet var navBar: UINavigationBar!
     
     init(photo: Photo) {
         super.init(nibName: "PhotoDetail", bundle: nil)
@@ -26,6 +27,10 @@ class PhotoDetail: UIViewController
         // Do any additional setup after loading the view.
         if let image = photo?.image! {
             photoImage.image = UIImage(data: image)
+        }
+        
+        if let photoDate = photo?.date! {
+            self.title = photoDate.formatted()
         }
     }
 

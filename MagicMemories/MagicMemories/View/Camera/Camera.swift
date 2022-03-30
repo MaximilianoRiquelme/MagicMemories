@@ -10,24 +10,36 @@ import UIKit
 class Camera: UIViewController
 {
     @IBOutlet var cameraImageView: UIImageView!
-    @IBOutlet var takePhotoButton: UIButton!
+    @IBOutlet var pickPhotoButton: UIButton!
+    @IBOutlet var savePhotoButton: UIButton!
     @IBOutlet var goToGalleryButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Magic Memories"
         // Do any additional setup after loading the view.
+        
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = .secondarySystemBackground
+        
+        self.navigationController?.navigationBar.standardAppearance = navBarAppearance
+        self.navigationController?.navigationBar.compactAppearance = navBarAppearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        self.navigationController?.navigationBar.compactScrollEdgeAppearance = navBarAppearance
     }
 
-    @IBAction func didTakePhoto(_ sender: Any) {
+    @IBAction func didPickPhoto(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = .photoLibrary
         picker.allowsEditing = true
         
         present(picker, animated: true)
-        
-        if let imageData = cameraImageView.image?.pngData() {
+    }
+    
+    @IBAction func didSavePhoto(_ sender: Any) {
+        if let imageData = self.cameraImageView.image?.pngData() {
             CoreDataClient.shareInstance.savePhoto(imageData: imageData)
         }
     }

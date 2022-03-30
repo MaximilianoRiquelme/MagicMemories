@@ -13,13 +13,20 @@ class Gallery: UITabBarController {
         super.viewDidLoad()
         title = "Gallery"
         // Do any additional setup after loading the view.
+        
+        // Sets up the views.
         let tabs = [Memories(cellSize: self.view.frame.width/2),
                     Map(),
                     Albums()]
-        
         self.setViewControllers(tabs, animated: true)
         
-        self.tabBar.unselectedItemTintColor = .white
-        self.tabBar.backgroundColor = .tertiarySystemBackground
+        
+        //Sets up the tabBar appearance.
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.backgroundColor = .tertiarySystemBackground
+        
+        self.tabBar.standardAppearance = tabBarAppearance
+        self.tabBar.scrollEdgeAppearance = tabBarAppearance
     }
 }

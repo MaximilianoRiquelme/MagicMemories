@@ -9,9 +9,12 @@ import UIKit
 
 class Albums: UITableViewController {
     
+    var tabImage: UIImage = .strokedCheckmark
+    
     init() {
         super.init(nibName: "Albums", bundle: nil)
         self.title = "Albums"
+        tabBarItem.image = UIImage(systemName: "rectangle.3.group.bubble.left.fill")
     }
     
     required init?(coder: NSCoder) {
@@ -20,7 +23,7 @@ class Albums: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .red
+        self.view.backgroundColor = .secondarySystemBackground
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

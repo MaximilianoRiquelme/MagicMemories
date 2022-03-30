@@ -20,6 +20,7 @@ class Memories: UICollectionViewController
         layout.minimumInteritemSpacing = 1
         super.init(collectionViewLayout: layout)
         self.title = "Memories"
+        tabBarItem.image = UIImage(systemName: "photo.on.rectangle")
     }
     
     required init?(coder: NSCoder) {

@@ -15,7 +15,7 @@ class MemoriesCell: UICollectionViewCell
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.backgroundColor = .tertiarySystemBackground
+        self.backgroundColor = .black
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
     }
