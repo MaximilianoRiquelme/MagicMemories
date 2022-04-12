@@ -11,10 +11,26 @@ import CoreData
 
 class CoreDataClient
 {
-    //Singleton
+    // Singleton
     static let shareInstance = CoreDataClient()
     
     let context = (UIApplication.shared.delegate as! AppDelegate) .persistentContainer.viewContext
+    
+    func fetchAllPhotos() -> [Photo] {
+        var fetchResults = [Photo]()
+        
+        //NSFetchRequest is a generic class. It is a description of search criteria used to retrieve data from a presistent store.
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Photo")
+        
+        do {
+            fetchResults = try context.fetch(fetchRequest) as! [Photo]
+        }
+        catch {
+            print("Error while fetching the photo. \(error.localizedDescription)")
+        }
+        
+        return fetchResults
+    }
     
     func savePhoto(imageData: Data) {
         let photoInstance = Photo(context: context)
@@ -29,19 +45,14 @@ class CoreDataClient
         }
     }
     
-    func fetchPhotos() -> [Photo] {
-        var fetchResult = [Photo]()
-        
-        //NSFetchRequest is a generic class. It is a description of search criteria used to retrieve data from a presistent store.
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Photo")
+    func deletePhoto(photo: Photo) {
+        context.delete(photo)
         
         do {
-            fetchResult = try context.fetch(fetchRequest) as! [Photo]
+            try context.save()
         }
         catch {
-            print("Error while fetching the photo. \(error.localizedDescription)")
+            
         }
-        
-        return fetchResult
     }
 }

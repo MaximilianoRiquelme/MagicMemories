@@ -17,7 +17,7 @@ class Memories: UICollectionViewController
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: cellSize-4, height: cellSize-4)
         layout.minimumLineSpacing = 9
-        layout.minimumInteritemSpacing = 1
+        layout.minimumInteritemSpacing = 1	
         super.init(collectionViewLayout: layout)
         self.title = "Memories"
         tabBarItem.image = UIImage(systemName: "photo.on.rectangle")
@@ -39,8 +39,16 @@ class Memories: UICollectionViewController
         self.collectionView!.register(nib, forCellWithReuseIdentifier: cellIdentifier)
         
         // Do any additional setup after loading the view.
-        fetchedPhotos = CoreDataClient.shareInstance.fetchPhotos()
+        fetchedPhotos = CoreDataClient.shareInstance.fetchAllPhotos()
         self.collectionView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let photoDetail = segue.destination as! PhotoDetail
+        photoDetail.callback = {
+            self.fetchedPhotos = CoreDataClient.shareInstance.fetchAllPhotos()
+            self.collectionView.reloadData()
+        }
     }
     
     /*

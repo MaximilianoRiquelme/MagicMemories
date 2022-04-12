@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
 class PhotoDetail: UIViewController
 {
+    var callback : (() -> Void)?
     var photo: Photo?
+    var deleteButton: UIBarButtonItem?
+    
     @IBOutlet var photoImage: UIImageView!
-    @IBOutlet var navBar: UINavigationBar!
+    
     
     init(photo: Photo) {
         super.init(nibName: "PhotoDetail", bundle: nil)
@@ -25,6 +29,9 @@ class PhotoDetail: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        deleteButton = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(deleteThisPhoto))
+        self.navigationItem.rightBarButtonItem = deleteButton
+        
         if let image = photo?.image! {
             photoImage.image = UIImage(data: image)
         }
@@ -33,16 +40,16 @@ class PhotoDetail: UIViewController
             self.title = photoDate.formatted()
         }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        callback?()
     }
-    */
-
+    
+    @objc func deleteThisPhoto() {
+        if let thisPhoto = self.photo {
+            CoreDataClient.shareInstance.deletePhoto(photo: thisPhoto)
+            navigationController?.popViewController(animated: true)
+        }
+    }
 }

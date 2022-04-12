@@ -13,6 +13,7 @@
                 <outlet property="cameraImageView" destination="e6p-ZH-dDM" id="lgQ-Nh-uCY"/>
                 <outlet property="goToGalleryButton" destination="GRn-vU-C6f" id="9rY-ry-3My"/>
                 <outlet property="pickPhotoButton" destination="b3m-PU-YuK" id="lyP-vS-M03"/>
+                <outlet property="savePhotoButton" destination="wfW-Ao-3rC" id="nCg-sW-CZH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,11 +23,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e6p-ZH-dDM">
-                    <rect key="frame" x="0.0" y="98" width="414" height="714"/>
+                    <rect key="frame" x="0.0" y="121.5" width="414" height="663"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRn-vU-C6f">
-                    <rect key="frame" x="103.5" y="59" width="207" height="30.5"/>
+                    <rect key="frame" x="103.5" y="81.5" width="207" height="30"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="tinted" title="Go to Gallery">
                         <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
@@ -37,7 +38,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfW-Ao-3rC">
-                    <rect key="frame" x="257" y="820" width="100.5" height="30"/>
+                    <rect key="frame" x="227.5" y="794.5" width="166" height="30"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="tinted" title="Save Photo" subtitle="">
                         <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
@@ -48,7 +49,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3m-PU-YuK">
-                    <rect key="frame" x="59" y="820" width="96.5" height="30"/>
+                    <rect key="frame" x="20.5" y="794.5" width="166" height="30"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="tinted" title="Pick Photo" subtitle="">
                         <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
@@ -62,19 +63,21 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="e6p-ZH-dDM" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="2" id="4Np-oH-UaO"/>
-                <constraint firstItem="e6p-ZH-dDM" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" constant="-104" id="5r9-Da-mby"/>
+                <constraint firstItem="e6p-ZH-dDM" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="4Np-oH-UaO"/>
+                <constraint firstItem="e6p-ZH-dDM" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.81" id="5r9-Da-mby"/>
                 <constraint firstItem="e6p-ZH-dDM" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="61f-qZ-F7b"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="b3m-PU-YuK" secondAttribute="bottom" constant="12" id="8bC-3n-OmE"/>
-                <constraint firstItem="b3m-PU-YuK" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" constant="-100" id="9Hm-f3-4NT"/>
-                <constraint firstItem="wfW-Ao-3rC" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" constant="100" id="STt-UX-b51"/>
+                <constraint firstItem="b3m-PU-YuK" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" multiplier="0.5" id="Dfs-9R-Zi7"/>
+                <constraint firstItem="wfW-Ao-3rC" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" multiplier="1.5" id="IIA-O5-vES"/>
+                <constraint firstItem="b3m-PU-YuK" firstAttribute="top" secondItem="e6p-ZH-dDM" secondAttribute="bottom" constant="10" id="SSO-Pb-x8Z"/>
+                <constraint firstItem="wfW-Ao-3rC" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.4" id="VhX-s8-xd4"/>
+                <constraint firstItem="b3m-PU-YuK" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.4" id="dSN-wg-JZn"/>
                 <constraint firstItem="e6p-ZH-dDM" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="eu5-UC-qSu"/>
                 <constraint firstItem="GRn-vU-C6f" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="fHQ-6t-opI"/>
                 <constraint firstItem="GRn-vU-C6f" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.5" id="fmv-t3-AfM"/>
-                <constraint firstItem="GRn-vU-C6f" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="rrq-9P-mjD"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wfW-Ao-3rC" secondAttribute="bottom" constant="12" id="xct-NZ-18Q"/>
+                <constraint firstItem="GRn-vU-C6f" firstAttribute="bottom" secondItem="e6p-ZH-dDM" secondAttribute="top" constant="-10" id="giE-xH-JVf"/>
+                <constraint firstItem="wfW-Ao-3rC" firstAttribute="top" secondItem="e6p-ZH-dDM" secondAttribute="bottom" constant="10" id="r0u-b2-VT7"/>
             </constraints>
-            <point key="canvasLocation" x="334.78260869565219" y="84.375"/>
+            <point key="canvasLocation" x="588" y="8"/>
         </view>
     </objects>
     <resources>
